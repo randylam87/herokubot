@@ -4,10 +4,10 @@ import json
 import time
 
 # Twitter API Keys
-consumer_key = "Ed4RNulN1lp7AbOooHa9STCoU"
-consumer_secret = "P7cUJlmJZq0VaCY0Jg7COliwQqzK0qYEyUF9Y0idx4ujb3ZlW5"
-access_token = "839621358724198402-dzdOsx2WWHrSuBwyNUiqSEnTivHozAZ"
-access_token_secret = "dCZ80uNRbFDjxdU2EckmNiSckdoATach6Q8zb7YYYE5ER"
+consumer_key = "iTtiiLTVmDYov3ejbYvEJpAn8"
+consumer_secret = "JTP9VhK7VWbtY5qqCvzszUPZgRHxZLw2h00eDj4foYrkoMzr0g"
+access_token = "56618072-iW8eIJk6Y7qTQkFtm4hHJNFbeXieXV2YNof3G87jx"
+access_token_secret = "40Vh5qyFKomBJ45e2DDtIW9XfKYx4yqulcqlFqyA56i3H"
 
 # Setup Tweepy API Authentication
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
@@ -17,8 +17,9 @@ api = tweepy.API(auth, parser=tweepy.parsers.JSONParser())
 
 # Create a function that tweets
 def TweetOut(tweet_number):
+    print('Sending a tweet out then waiting 10 secs')
     api.update_status(
-        "Can't stop. Won't stop. Chatting! This is Tweet #%s!" %
+        "Can't stop. Won't stop. Chatting! This is Tweet #### %s!" %
         tweet_number)
 
 
@@ -31,8 +32,8 @@ while(True):
     # Call the TweetQuotes function and specify the tweet number
     TweetOut(counter)
 
-    # Once tweeted, wait 60 seconds before doing anything else
-    time.sleep(60)
+    # Once tweeted, wait 10 seconds before doing anything else
+    time.sleep(10)
 
     # Add 1 to the counter prior to re-running the loop
     counter = counter + 1
